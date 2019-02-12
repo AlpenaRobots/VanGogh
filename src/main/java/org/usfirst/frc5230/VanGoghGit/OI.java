@@ -79,6 +79,7 @@ public class OI {
         SmartDashboard.putData("hatchToggleClamp", new hatchToggleClamp());
         SmartDashboard.putData("ballPlacerRun", new ballPlacerRun());
         SmartDashboard.putData("ballToggleRotate", new ballToggleRotate());
+        SmartDashboard.putData("setElevator", new setElevator());
         SmartDashboard.putData("elevatorLevelOne", new elevatorLevelOne());
         SmartDashboard.putData("elevatorLevelTwo", new elevatorLevelTwo());
         SmartDashboard.putData("elevatorLevelThree", new elevatorLevelThree());

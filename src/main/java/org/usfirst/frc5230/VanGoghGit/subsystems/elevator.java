@@ -83,6 +83,14 @@ public class elevator extends Subsystem {
         elevatorTalon2.set(speed);
     }
 
-   
+   public void off() {
+       elevatorTalon1.set(0);
+       elevatorTalon2.set(0);
+   }
+
+   public int getEncoderCount() {
+       return elevatorTalon1.getSensorCollection().getQuadraturePosition();
+//FIX  
+}
 }
 
