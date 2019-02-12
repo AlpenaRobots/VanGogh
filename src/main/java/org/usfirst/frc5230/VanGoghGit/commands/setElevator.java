@@ -46,9 +46,9 @@ public class setElevator extends Command {
     protected void initialize() {
         startCount = Robot.elevator.getEncoderCount();
     	if (startCount < m_height) {
-    		Robot.elevator.setElevator(m_speed);
+    		Robot.elevator.setElevatorSpeed(m_speed);
     	} else {
-    		Robot.elevator.setElevator(-m_speed);
+    		Robot.elevator.setElevatorSpeed(-m_speed);
     	}
     	atDistance = false;
     }

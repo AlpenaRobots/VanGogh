@@ -78,7 +78,7 @@ public class elevator extends Subsystem {
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
 
-    public void setElevator(double speed) {
+    public void setElevatorSpeed(double speed) {
         elevatorTalon1.set(speed);
         elevatorTalon2.set(speed);
     }
@@ -91,6 +91,7 @@ public class elevator extends Subsystem {
    public int getEncoderCount() {
        return elevatorTalon1.getSensorCollection().getQuadraturePosition();
 //FIX  
-}
+    }
+
 }
 
