@@ -92,6 +92,5 @@ public class elevator extends Subsystem {
        return elevatorTalon1.getSensorCollection().getQuadraturePosition();
 //FIX  
     }
-
 }
 

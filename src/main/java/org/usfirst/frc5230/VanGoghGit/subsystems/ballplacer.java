@@ -79,7 +79,7 @@ public class ballplacer extends Subsystem {
 
     public void setPlacer(double speed) {
         ballplacerTalon1.set(speed);
-        ballplacerTalon2.set(speed);
+        ballplacerTalon2.set(-speed);
     }
     
 }
