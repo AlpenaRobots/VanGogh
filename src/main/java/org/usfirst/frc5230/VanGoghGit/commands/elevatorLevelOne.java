@@ -13,8 +13,10 @@ package org.usfirst.frc5230.VanGoghGit.commands;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
-import java.awt.Robot;
+import javax.lang.model.util.ElementScanner6;
 
+import org.usfirst.frc5230.VanGoghGit.OI;
+import org.usfirst.frc5230.VanGoghGit.Robot;
 import org.usfirst.frc5230.VanGoghGit.subsystems.*;
 
 /**

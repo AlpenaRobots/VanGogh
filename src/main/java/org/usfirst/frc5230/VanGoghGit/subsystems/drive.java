@@ -59,16 +59,16 @@ public class drive extends Subsystem {
         addChild("ShiftingSolenoid",shiftingSolenoid);
         
         
-        sparkMAX1 = new CANSparkMax(4, MotorType.kBrushless);
+        sparkMAX1 = new CANSparkMax(0, MotorType.kBrushless);
         
         
-        sparkMAX2 = new CANSparkMax(5, MotorType.kBrushless);
+        sparkMAX2 = new CANSparkMax(1, MotorType.kBrushless);
         
         
-        sparkMAX3 = new CANSparkMax(6, MotorType.kBrushless);
+        sparkMAX3 = new CANSparkMax(14, MotorType.kBrushless);
         
         
-        sparkMAX4 = new CANSparkMax(7, MotorType.kBrushless);
+        sparkMAX4 = new CANSparkMax(15, MotorType.kBrushless);
         
         
         
