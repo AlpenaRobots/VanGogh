@@ -52,8 +52,10 @@ public class elevatorLevelTwo extends CommandGroup {
  
         if (Robot.oi.xbox1.getRawButton(2) && Robot.oi.xbox1.getRawButton(6)) {
         //       addSequential(new setElevator(, .8));
+          addSequential(new ballToggleRotate());
         } else if(Robot.oi.xbox1.getRawButton(2)) {
      //       addSequential(new setElevator(, .8));
+          addSequential(new ballToggleRotate());
         } else {
             Robot.elevator.off();
         }
