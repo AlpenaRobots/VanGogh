@@ -70,6 +70,11 @@ public class Robot extends TimedRobot {
     double[] lengthArray;
     double length = 0;
 
+    NetworkTable table = NetworkTableInstance.getDefault().getTable("limelight");
+    NetworkTableEntry tx = table.getEntry("tx");
+    NetworkTableEntry ty = table.getEntry("ty");
+    NetworkTableEntry ta = table.getEntry("ta");
+    
 
     /**
      * This function is run when the robot is first started up and should be
@@ -126,6 +131,14 @@ public class Robot extends TimedRobot {
         angleArray = angleNet.getDoubleArray(defaultValue);
         lengthNet = GRIPLines.getEntry("angle");
         lengthArray = angleNet.getDoubleArray(defaultValue);
+
+        double x = tx.getDouble(0.0);
+        double y = ty.getDouble(0.0);
+        double area = ta.getDouble(0.0);
+        SmartDashboard.putNumber("LimelightX", x);
+        SmartDashboard.putNumber("LimelightY", y);
+        SmartDashboard.putNumber("LimelightArea", area);
+
         try {
             x1 = x1Array[0];
             x2 = x2Array[0];
@@ -173,6 +186,14 @@ public class Robot extends TimedRobot {
         angleArray = angleNet.getDoubleArray(defaultValue);
         lengthNet = GRIPLines.getEntry("angle");
         lengthArray = angleNet.getDoubleArray(defaultValue);
+
+        double x = tx.getDouble(0.0);
+        double y = ty.getDouble(0.0);
+        double area = ta.getDouble(0.0);
+        SmartDashboard.putNumber("LimelightX", x);
+        SmartDashboard.putNumber("LimelightY", y);
+        SmartDashboard.putNumber("LimelightArea", area);
+
         try {
             x1 = x1Array[0];
             x2 = x2Array[0];
@@ -222,6 +243,14 @@ public class Robot extends TimedRobot {
         angleArray = angleNet.getDoubleArray(defaultValue);
         lengthNet = GRIPLines.getEntry("angle");
         lengthArray = angleNet.getDoubleArray(defaultValue);
+
+        double x = tx.getDouble(0.0);
+        double y = ty.getDouble(0.0);
+        double area = ta.getDouble(0.0);
+        SmartDashboard.putNumber("LimelightX", x);
+        SmartDashboard.putNumber("LimelightY", y);
+        SmartDashboard.putNumber("LimelightArea", area);
+
         try {
             x1 = x1Array[0];
             x2 = x2Array[0];
@@ -241,7 +270,7 @@ public class Robot extends TimedRobot {
             Robot.drive.areThereLines(false);
             SmartDashboard.getBoolean("Are There Lines", false);
         }
-        
+
         Scheduler.getInstance().run();
     }
 }
