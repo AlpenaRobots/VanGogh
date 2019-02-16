@@ -150,7 +150,7 @@ public class drive extends Subsystem {
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
      
-    public void joystickImput (Joystick stick) {
+    public void joystickInput (Joystick stick) {
         double localSpeedVar = 1;
         robotDrive41.tankDrive(stick.getRawAxis(1)*localSpeedVar, stick.getRawAxis(5)*localSpeedVar);
         if(DriverStation.getInstance().getMatchTime() > 29 &&  DriverStation.getInstance().getMatchTime() < 31 && DriverStation.getInstance().isOperatorControl()) {

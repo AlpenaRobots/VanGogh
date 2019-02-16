@@ -54,7 +54,7 @@ public class Robot extends TimedRobot {
     NetworkTableEntry y1Net = GRIPtable.getEntry("y1");
     NetworkTableEntry y2Net = GRIPtable.getEntry("y2");
     NetworkTableEntry angleNet = GRIPtable.getEntry("lineAngle");
-    NetworkTableEntry lenthNet = GRIPtable.getEntry("lenth");
+    NetworkTableEntry lengthNet = GRIPtable.getEntry("length");
    
     NetworkTable table = NetworkTableInstance.getDefault().getTable("limelight");
     NetworkTableEntry tx = table.getEntry("tx");
@@ -116,7 +116,19 @@ public class Robot extends TimedRobot {
 
         Robot.drive.updateLimelightTracking();
 
-        double x1 = x1.getDouble(0.0);
+        double x1 = x1Net.getDouble(0.0);
+        double x2 = x2Net.getDouble(0.0);
+        double y1 = x1Net.getDouble(0.0);
+        double y2 = x2Net.getDouble(0.0);
+        double angle = angleNet.getDouble(0.0);
+        double length = lengthNet.getDouble(0.0);
+
+        SmartDashboard.putNumber("x1", x1);
+        SmartDashboard.putNumber("x2", x2);
+        SmartDashboard.putNumber("y1", y1);
+        SmartDashboard.putNumber("y2", y2);
+        SmartDashboard.putNumber("angle", angle);
+        SmartDashboard.putNumber("length", length);
 
         Robot.drive.updateGaffersTape();
 
@@ -146,6 +158,21 @@ public class Robot extends TimedRobot {
 
         Robot.drive.updateLimelightTracking();
 
+        double x1 = x1Net.getDouble(0.0);
+        double x2 = x2Net.getDouble(0.0);
+        double y1 = x1Net.getDouble(0.0);
+        double y2 = x2Net.getDouble(0.0);
+        double angle = angleNet.getDouble(0.0);
+        double length = lengthNet.getDouble(0.0);
+
+        SmartDashboard.putNumber("x1", x1);
+        SmartDashboard.putNumber("x2", x2);
+        SmartDashboard.putNumber("y1", y1);
+        SmartDashboard.putNumber("y2", y2);
+        SmartDashboard.putNumber("angle", angle);
+        SmartDashboard.putNumber("length", length);
+
+        Robot.drive.updateGaffersTape();
 
         Scheduler.getInstance().run();
     }
@@ -174,6 +201,22 @@ public class Robot extends TimedRobot {
         SmartDashboard.putNumber("LimelightArea", area);
 
         Robot.drive.updateLimelightTracking();
+
+        double x1 = x1Net.getDouble(0.0);
+        double x2 = x2Net.getDouble(0.0);
+        double y1 = x1Net.getDouble(0.0);
+        double y2 = x2Net.getDouble(0.0);
+        double angle = angleNet.getDouble(0.0);
+        double length = lengthNet.getDouble(0.0);
+
+        SmartDashboard.putNumber("x1", x1);
+        SmartDashboard.putNumber("x2", x2);
+        SmartDashboard.putNumber("y1", y1);
+        SmartDashboard.putNumber("y2", y2);
+        SmartDashboard.putNumber("angle", angle);
+        SmartDashboard.putNumber("length", length);
+
+        Robot.drive.updateGaffersTape();
 
         Scheduler.getInstance().run();
     }
