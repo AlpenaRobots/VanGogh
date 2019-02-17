@@ -47,7 +47,7 @@ public class setElevator extends Command {
         startCount = Robot.elevator.getEncoderCount();
     	if (startCount < m_height) {
             Robot.elevator.setElevatorSpeed(m_speed);
-            // run ball rotate
+            new ballToggleRotate();
     	} else {
     		Robot.elevator.setElevatorSpeed(-m_speed);
     	}

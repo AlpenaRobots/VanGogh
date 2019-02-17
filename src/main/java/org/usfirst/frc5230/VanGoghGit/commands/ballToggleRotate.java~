@@ -51,11 +51,11 @@ public class ballToggleRotate extends Command {
     // Make this return true when this Command no longer needs to run execute()
     @Override
     protected boolean isFinished() {
-        if (Robot.ballrotate.startingBallPos != Robot.ballrotate.ballPos) {
+         if (Robot.ballrotate.startingBallPos != Robot.ballrotate.ballPos) {
             return true;
         } else {
             return false;
-        }
+        } 
     }
 
     // Called once after isFinished returns true
