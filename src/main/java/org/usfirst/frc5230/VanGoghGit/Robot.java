@@ -178,19 +178,29 @@ public class Robot extends TimedRobot {
 
         Robot.drive.updateGaffersTape();
 
-                //Elevator Level One
+        //Elevator Level One
         if (oi.xbox1.getRawButton(1) && oi.xbox1.getRawButton(6)) {
      //       new setElevator(, .8).start();
         }
-
         //Elevator Level Two
         if (oi.xbox1.getRawButton(2) && oi.xbox1.getRawButton(6)) {
      //       new setElevator(, .8).start();
         }
-
         //Elevator Level Three
         if (oi.xbox1.getRawButton(4) && oi.xbox1.getRawButton(6)) {
      //       new setElevator(, .8).start();
+        }
+        //Elevator Level One
+        if (oi.xbox1.getRawButton(1)) {
+    //       new setElevator(, .8).start();
+        }
+        //Elevator Level Two
+        if (oi.xbox1.getRawButton(2)) {
+    //       new setElevator(, .8).start();
+         }       
+        //Elevator Level Three
+        if (oi.xbox1.getRawButton(4)) {
+    //       new setElevator(, .8).start();
         }
 
         Scheduler.getInstance().run();
@@ -241,19 +251,27 @@ public class Robot extends TimedRobot {
 
         //Elevator Level One
         if (oi.xbox1.getRawButton(1) && oi.xbox1.getRawButton(6)) {
-     //       new setElevator(, .8).start();
+        //       new setElevator(, .8).start();
         }
-
         //Elevator Level Two
         if (oi.xbox1.getRawButton(2) && oi.xbox1.getRawButton(6)) {
-     //       new setElevator(, .8).start();
+    //       new setElevator(, .8).start();
         }
-
         //Elevator Level Three
         if (oi.xbox1.getRawButton(4) && oi.xbox1.getRawButton(6)) {
-     //       new setElevator(, .8).start();
+    //       new setElevator(, .8).start();
         }
-
-
+        //Elevator Level One
+        if (oi.xbox1.getRawButton(1)) {
+    //       new setElevator(, .8).start();
+        }
+        //Elevator Level Two
+        if (oi.xbox1.getRawButton(2)) {
+    //       new setElevator(, .8).start();
+        }       
+    //Elevator Level Three
+        if (oi.xbox1.getRawButton(4)) {
+    //       new setElevator(, .8).start();
+        }
     }
 }
