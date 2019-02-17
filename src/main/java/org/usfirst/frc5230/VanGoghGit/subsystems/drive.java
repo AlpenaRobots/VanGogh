@@ -81,10 +81,12 @@ public class drive extends Subsystem {
     public double m_LimelightDriveCommand = 0.0;
     public double m_LimelightSteerCommand = 0.0;
     public double tx;
-    public boolean isDriverControl = true;
+ //   public boolean isDriverControl = true;
 
     private CANEncoder rightEncoder;
     private CANEncoder leftEncoder;
+
+    public boolean driverMode = true;
 
     public drive() {
     
@@ -142,7 +144,7 @@ public class drive extends Subsystem {
         SmartDashboard.putNumber("Y2", y2);
         SmartDashboard.putNumber("Right Encoder", getRightEncoder());
         SmartDashboard.putNumber("Left Encoder", getLeftEncoder());       
-        SmartDashboard.putBoolean("Is Driver Control", isDriverControl);
+        SmartDashboard.putBoolean("Is Driver Control", isDriverControlMode);
         SmartDashboard.putNumber("tx", Math.abs(tx)); 
     }
 
@@ -155,14 +157,28 @@ public class drive extends Subsystem {
     // here. Call these from Commands.
      
     public void joystickInput (Joystick stick) {
-        double localSpeedVar = 1;
-        robotDrive41.tankDrive(stick.getRawAxis(1)*localSpeedVar, stick.getRawAxis(5)*localSpeedVar);
+        if (driverMode == true) {
+            double localSpeedVar = 1;
+            robotDrive41.tankDrive(stick.getRawAxis(1)*localSpeedVar, stick.getRawAxis(5)*localSpeedVar);
+        } else {
+            double localSpeedVar = -1;
+            robotDrive41.tankDrive(stick.getRawAxis(5)*localSpeedVar, stick.getRawAxis(1)*localSpeedVar);
+        }
         if(DriverStation.getInstance().getMatchTime() > 29 &&  DriverStation.getInstance().getMatchTime() < 31 && DriverStation.getInstance().isOperatorControl()) {
             stick.setRumble(RumbleType.kLeftRumble, 1);
         } else if(DriverStation.getInstance().getMatchTime() <= 29 && DriverStation.getInstance().isOperatorControl()) {
             stick.setRumble(RumbleType.kLeftRumble, 0);
         }
     }
+
+    public boolean toggleJoystickInput() {
+        if(driverMode != true) {
+           return driverMode = true;
+        } else {
+            return driverMode = false;
+        }
+    }
+
 
     public void shift() {
         System.out.println("Start Shift");
@@ -247,9 +263,9 @@ public class drive extends Subsystem {
         // These numbers must be tuned for your Robot! Be careful!
 
         final double STEER_K = 0.05; // how hard to turn toward the target
-        final double DRIVE_K = 0.15; // how hard to drive fwd toward the target
-        final double DESIRED_TARGET_AREA = 13.0; // Area of the target when the robot reaches the wall
-        final double MAX_DRIVE = 0.7; // Simple speed limit so we don't drive too fast
+        final double DRIVE_K = 0.1; // how hard to drive fwd toward the target
+        final double DESIRED_TARGET_AREA = 45.0; // Area of the target when the robot reaches the wall
+        final double MAX_DRIVE = 0.45; // Simple speed limit so we don't drive too fast
         double tv = NetworkTableInstance.getDefault().getTable("limelight").getEntry("tv").getDouble(0);
         double tx = NetworkTableInstance.getDefault().getTable("limelight").getEntry("tx").getDouble(0);
         double ty = NetworkTableInstance.getDefault().getTable("limelight").getEntry("ty").getDouble(0);
@@ -262,10 +278,11 @@ public class drive extends Subsystem {
             SmartDashboard.putBoolean("HasValidTarget", m_LimelightHasValidTarget);
             SmartDashboard.putNumber("Drive Command", m_LimelightDriveCommand);
             SmartDashboard.putNumber("Steer Command", m_LimelightSteerCommand);
-
+             
             return; 
             }
             m_LimelightHasValidTarget = true;
+            isDriverControlMode = false;
             // Start with proportional steering
             double steer_cmd = tx * STEER_K;
             m_LimelightSteerCommand = steer_cmd;

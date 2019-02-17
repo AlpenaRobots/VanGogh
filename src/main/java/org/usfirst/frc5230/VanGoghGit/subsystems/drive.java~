@@ -86,6 +86,8 @@ public class drive extends Subsystem {
     private CANEncoder rightEncoder;
     private CANEncoder leftEncoder;
 
+    public boolean driverMode = true;
+
     public drive() {
     
         shiftingSolenoid = new DoubleSolenoid(0, 0, 1);
@@ -155,14 +157,28 @@ public class drive extends Subsystem {
     // here. Call these from Commands.
      
     public void joystickInput (Joystick stick) {
-        double localSpeedVar = 1;
-        robotDrive41.tankDrive(stick.getRawAxis(1)*localSpeedVar, stick.getRawAxis(5)*localSpeedVar);
+        if (driverMode == true) {
+            double localSpeedVar = 1;
+            robotDrive41.tankDrive(stick.getRawAxis(1)*localSpeedVar, stick.getRawAxis(5)*localSpeedVar);
+        } else {
+            double localSpeedVar = -1;
+            robotDrive41.tankDrive(stick.getRawAxis(5)*localSpeedVar, stick.getRawAxis(1)*localSpeedVar);
+        }
         if(DriverStation.getInstance().getMatchTime() > 29 &&  DriverStation.getInstance().getMatchTime() < 31 && DriverStation.getInstance().isOperatorControl()) {
             stick.setRumble(RumbleType.kLeftRumble, 1);
         } else if(DriverStation.getInstance().getMatchTime() <= 29 && DriverStation.getInstance().isOperatorControl()) {
             stick.setRumble(RumbleType.kLeftRumble, 0);
         }
     }
+
+    public boolean toggleJoystickInput() {
+        if(driverMode == true) {
+           return driverMode = false;
+        } else {
+            return driverMode = true;
+        }
+    }
+
 
     public void shift() {
         System.out.println("Start Shift");
