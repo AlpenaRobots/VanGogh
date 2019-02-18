@@ -104,7 +104,7 @@ public class Robot extends TimedRobot {
         CodeCam.setFPS(30);
         UsbCamera DriveCam = (CameraServer.getInstance().startAutomaticCapture("Drive Camera", 1));
         DriveCam.setResolution(858, 480);
-        DriveCam.setFPS(30);
+        DriveCam.setFPS(30); 
     }
 
     /**

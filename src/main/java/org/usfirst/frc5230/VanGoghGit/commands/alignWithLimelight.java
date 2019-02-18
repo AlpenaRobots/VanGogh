@@ -58,9 +58,7 @@ public class alignWithLimelight extends Command {
                 timesNoTarget = 0;
                 return false;
             }
-        }
-        else
-        {
+        } else {
             return true;
         }
     }

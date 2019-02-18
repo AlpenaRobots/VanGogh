@@ -58,6 +58,9 @@ public class ballintake extends Subsystem {
 
         // Set the default command for a subsystem here.
         // setDefaultCommand(new MySpecialCommand());
+
+        setDefaultCommand(new ballIntakeRun());
+
     }
 
     @Override
@@ -75,13 +78,18 @@ public class ballintake extends Subsystem {
     // here. Call these from Commands.
 
     public void intakeJoystick(Joystick stick) {
-        if(stick.getRawAxis(3) > .01 && stick.getRawAxis(2) <= .01) {
-            setIntake(-stick.getRawAxis(2));
+        double localSpeedVar = .8;
+        System.out.println("Started intake");
+        if(stick.getRawAxis(3) > .05 && stick.getRawAxis(2) <= .05) {
+            setIntake(-stick.getRawAxis(3)*localSpeedVar);
             Robot.ballplacer.setPlacer(-.2);
-        } else if(stick.getRawAxis(2) > .01 && stick.getRawAxis(3) <= .01) {
-            setIntake(stick.getRawAxis(3));
+            System.out.println("intake in");
+        } else if(stick.getRawAxis(2) > .05 && stick.getRawAxis(3) <= .05) {
+            setIntake(stick.getRawAxis(2)*localSpeedVar);
+            System.out.println("intake out");
         } else {
             setIntake(0);
+            System.out.println("doing nothing");
         }
     }
 
