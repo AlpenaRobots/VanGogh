@@ -80,6 +80,9 @@ public class drive extends Subsystem {
     public double midpointY;
     public boolean AreThereLines = false;
 
+    public double m_LinesDriveCommand = 0.0;
+    public double m_LinesSteerCommand = 0.0;
+
     public boolean m_LimelightHasValidTarget = false;
     public double m_LimelightDriveCommand = 0.0;
     public double m_LimelightSteerCommand = 0.0;
@@ -233,18 +236,32 @@ public class drive extends Subsystem {
 
             }
         }
-        
-        public void alignToLine() {
-
-        }
 
         public void updateGaffersTape() {
+            final double STEER_LINES_K = 0.05; // how hard to turn toward the target
             x1 = NetworkTableInstance.getDefault().getTable("GRIP/horizontalLines").getEntry("x1").getDouble(0);
             x2 = NetworkTableInstance.getDefault().getTable("GRIP/horizontalLines").getEntry("x2").getDouble(0);
             y1 = NetworkTableInstance.getDefault().getTable("GRIP/horizontalLines").getEntry("y1").getDouble(0);
             y2 = NetworkTableInstance.getDefault().getTable("GRIP/horizontalLines").getEntry("y2").getDouble(0); 
             lineAngle = NetworkTableInstance.getDefault().getTable("GRIP/horizontalLines").getEntry("angle").getDouble(0);
             lineLength = NetworkTableInstance.getDefault().getTable("GRIP/horizontalLines").getEntry("length").getDouble(0);
+            
+            if (AreThereLines) {
+                isDriverControlMode = false;
+  //              double steer_lines_cmd =  * STEER_LINES_K;
+   //             m_LinesSteerCommand = steer_lines_cmd;
+
+ /*               midpointX = ((((x2 - x1) / 2)) + x1);
+                midpointY = ((((y2 - y1) / 2)) + y1);
+                double offset = midpointX - 120;
+                if (offset > 10) {
+                    //Move left by some vudu magic
+                    driveStraight(-1);
+                } else if (offset < 10) {
+                    //Move Right by crazier vudu magic   
+                } */
+
+            }
         }
 
         public void turn(double speed) {
