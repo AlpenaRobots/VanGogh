@@ -78,7 +78,7 @@ public class ballintake extends Subsystem {
     // here. Call these from Commands.
 
     public void intakeJoystick(Joystick stick) {
-        double localSpeedVar = .8;
+        double localSpeedVar = .2;
         System.out.println("Started intake");
         if(stick.getRawAxis(3) > .05 && stick.getRawAxis(2) <= .05) {
             setIntake(-stick.getRawAxis(3)*localSpeedVar);
