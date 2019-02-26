@@ -40,12 +40,14 @@ public class ballToggleRotate extends Command {
     protected void initialize() {
         Robot.ballrotate.checkBallPos();
         Robot.ballrotate.startingBallPos = Robot.ballrotate.ballPos;
+        System.out.println("init");
     }
 
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
         Robot.ballrotate.rotateBall();
+        System.out.println("execute");
     }
 
     // Make this return true when this Command no longer needs to run execute()

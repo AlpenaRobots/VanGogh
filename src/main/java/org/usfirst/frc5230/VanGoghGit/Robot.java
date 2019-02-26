@@ -230,6 +230,7 @@ public class Robot extends TimedRobot {
     @Override
     public void teleopPeriodic() {
        
+        SmartDashboard.putNumber("Ball Potentiometer", Robot.ballrotate.pot.get());
 
         double x = tx.getDouble(0.0);
         double y = ty.getDouble(0.0);
@@ -247,12 +248,12 @@ public class Robot extends TimedRobot {
         double angle = angleNet.getDouble(0.0);
         double length = lengthNet.getDouble(0.0);
 
-        SmartDashboard.putNumber("x1", x1);
-        SmartDashboard.putNumber("x2", x2);
-        SmartDashboard.putNumber("y1", y1);
-        SmartDashboard.putNumber("y2", y2);
-        SmartDashboard.putNumber("angle", angle);
-        SmartDashboard.putNumber("length", length);
+  //      SmartDashboard.putNumber("x1", x1);
+  //      SmartDashboard.putNumber("x2", x2);
+  //      SmartDashboard.putNumber("y1", y1);
+  //      SmartDashboard.putNumber("y2", y2);
+  //      SmartDashboard.putNumber("angle", angle);
+  //      SmartDashboard.putNumber("length", length);
 
         Robot.drive.updateGaffersTape();
 

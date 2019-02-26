@@ -62,6 +62,7 @@ public class OI {
     public JoystickButton y2;
     public JoystickButton b2;
     public JoystickButton rBump2;
+    public JoystickButton lBump2;
     public JoystickButton x2;
     public JoystickButton back2;
     public Joystick xbox2;
@@ -79,6 +80,8 @@ public class OI {
         x2.whenPressed(new alignWithLimelight());
         rBump2 = new JoystickButton(xbox2, 6);
         rBump2.whileHeld(new ballPlacerRun());
+        lBump2 = new JoystickButton(xbox2, 5);
+        lBump2.whenPressed(new ballToggleRotate());
         b2 = new JoystickButton(xbox2, 2);
         b2.whenPressed(new hatchToggleRotate());
         y2 = new JoystickButton(xbox2, 4);
