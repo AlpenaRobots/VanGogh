@@ -40,12 +40,14 @@ public class hatchToggleRotate extends Command {
     protected void initialize() {
         Robot.hatchrotate.checkHatchPos();
         Robot.hatchrotate.startingHatchPos = Robot.hatchrotate.hatchPos;
+        System.out.println("Hatch Rotate Init");
     }
 
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
         Robot.hatchrotate.rotateHatch();
+        System.out.println("Hatch Rotate Execute");
     }
 
     // Make this return true when this Command no longer needs to run execute()

@@ -176,11 +176,11 @@ public class drive extends Subsystem {
             double localSpeedVar = -1;
             robotDrive41.tankDrive(stick.getRawAxis(5)*localSpeedVar, stick.getRawAxis(1)*localSpeedVar);
         }
-        if(DriverStation.getInstance().getMatchTime() > 29 &&  DriverStation.getInstance().getMatchTime() < 31 && DriverStation.getInstance().isOperatorControl()) {
+  /*      if(DriverStation.getInstance().getMatchTime() > 29 &&  DriverStation.getInstance().getMatchTime() < 31 && DriverStation.getInstance().isOperatorControl()) {
             stick.setRumble(RumbleType.kLeftRumble, 1);
         } else if(DriverStation.getInstance().getMatchTime() <= 29 && DriverStation.getInstance().isOperatorControl()) {
             stick.setRumble(RumbleType.kLeftRumble, 0);
-        }
+        } */
     }
 
     public boolean toggleJoystickInput() {
