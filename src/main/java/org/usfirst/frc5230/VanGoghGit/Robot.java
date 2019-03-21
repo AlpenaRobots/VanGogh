@@ -100,7 +100,7 @@ public class Robot extends TimedRobot {
         SmartDashboard.putData("Auto mode", chooser);
 
         UsbCamera CodeCam = (CameraServer.getInstance().startAutomaticCapture("Vision Camera", 0));
-        CodeCam.setResolution(360, 240);
+        CodeCam.setResolution(858, 480);
         CodeCam.setFPS(30);
         UsbCamera DriveCam = (CameraServer.getInstance().startAutomaticCapture("Drive Camera", 1));
         DriveCam.setResolution(858, 480);
