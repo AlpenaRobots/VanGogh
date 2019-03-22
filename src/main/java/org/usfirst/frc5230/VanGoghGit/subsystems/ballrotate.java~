@@ -43,7 +43,7 @@ public class ballrotate extends Subsystem {
     public boolean ballPos = false;
     public boolean startingBallPos;
    
-    public Potentiometer pot = new AnalogPotentiometer(1, 360, 30);
+    public Potentiometer pot = new AnalogPotentiometer(0, 270, -250);
     
     
 
@@ -93,18 +93,18 @@ public class ballrotate extends Subsystem {
         checkBallPos();
         if (ballPos == false) {
             System.out.println("rotate up");
-            setBallRotate(-.1);
+            setBallRotate(.5);
         } else {
-            setBallRotate(.1);
+            setBallRotate(-.5);
             System.out.println("rotate down");
         }
     }
     
     public void checkBallPos() {
-        if (pot.get() <= 0) {
+        if (pot.get() <= -68) {
             ballPos = false;
             System.out.println("rotate is down");
-        } else if (pot.get() >= 90) {
+        } else if (pot.get() >= -65) {
             ballPos = true;
             System.out.println("rotate is up");
         }

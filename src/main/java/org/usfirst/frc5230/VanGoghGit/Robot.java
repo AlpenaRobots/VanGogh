@@ -100,10 +100,10 @@ public class Robot extends TimedRobot {
         SmartDashboard.putData("Auto mode", chooser);
 
         UsbCamera CodeCam = (CameraServer.getInstance().startAutomaticCapture("Vision Camera", 0));
-        CodeCam.setResolution(858, 480);
+        CodeCam.setResolution(240, 240);
         CodeCam.setFPS(30);
         UsbCamera DriveCam = (CameraServer.getInstance().startAutomaticCapture("Drive Camera", 1));
-        DriveCam.setResolution(858, 480);
+        DriveCam.setResolution(240, 240);
         DriveCam.setFPS(30); 
     }
 
@@ -187,7 +187,7 @@ public class Robot extends TimedRobot {
 
         Robot.drive.updateGaffersTape();
 
-        //Elevator Level One
+ /*       //Elevator Level One
         if (oi.xbox1.getRawButton(1) && oi.xbox1.getRawButton(6)) {
      //       new setElevator(, .8).start();
         }
@@ -210,7 +210,7 @@ public class Robot extends TimedRobot {
         //Elevator Level Three
         if (oi.xbox1.getRawButton(4)) {
     //       new setElevator(, .8).start();
-        }
+        } */
 
         Scheduler.getInstance().run();
     }
@@ -259,7 +259,7 @@ public class Robot extends TimedRobot {
 
         Scheduler.getInstance().run();
 
-        //Elevator Level One
+ /*       //Elevator Level One
         if (oi.xbox1.getRawButton(1) && oi.xbox1.getRawButton(6)) {
         //       new setElevator(, .8).start();
         }
@@ -282,6 +282,6 @@ public class Robot extends TimedRobot {
     //Elevator Level Three
         if (oi.xbox1.getRawButton(4)) {
     //       new setElevator(, .8).start();
-        }
-    }
+        } */
+    } 
 }
