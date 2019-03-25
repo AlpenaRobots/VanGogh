@@ -168,10 +168,10 @@ public class drive extends Subsystem {
      
     public void joystickInput (Joystick stick) {
         if (driverMode == true) {
-            double localSpeedVar = .75;
+            double localSpeedVar = .95;
             robotDrive41.tankDrive(stick.getRawAxis(1)*localSpeedVar, stick.getRawAxis(5)*localSpeedVar);
         } else {
-            double localSpeedVar = -.75;
+            double localSpeedVar = -.95;
             robotDrive41.tankDrive(stick.getRawAxis(5)*localSpeedVar, stick.getRawAxis(1)*localSpeedVar);
         }
   /*      if(DriverStation.getInstance().getMatchTime() > 29 &&  DriverStation.getInstance().getMatchTime() < 31 && DriverStation.getInstance().isOperatorControl()) {

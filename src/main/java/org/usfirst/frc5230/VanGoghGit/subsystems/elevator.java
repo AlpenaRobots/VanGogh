@@ -91,7 +91,6 @@ public class elevator extends Subsystem {
  
    public int getEncoderCount() {
        return elevatorTalon1.getSensorCollection().getQuadraturePosition();
-//FIX  
     }
 }
 
