@@ -78,7 +78,7 @@ public class ballplacer extends Subsystem {
     // here. Call these from Commands.
 
     public void setPlacer(double speed) {
-        ballplacerTalon1.set(speed);
+        ballplacerTalon1.set(-speed);
         ballplacerTalon2.set(speed);
     }
     

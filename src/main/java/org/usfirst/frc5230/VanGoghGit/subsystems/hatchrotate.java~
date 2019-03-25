@@ -68,7 +68,7 @@ public class hatchrotate extends Subsystem {
     @Override
     public void periodic() {
         // Put code here to be run every 
-        SmartDashboard.putNumber("Hatch Potentiometer", pot2.get());
+//        SmartDashboard.putNumber("Hatch Potentiometer", pot2.get());
 
     }
 

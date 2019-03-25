@@ -55,7 +55,7 @@ public class ballPlacerRun extends Command {
     // Called once after isFinished returns true
     @Override
     protected void end() {
-        Robot.ballplacer.setPlacer(-.25);
+        Robot.ballplacer.setPlacer(-.15);
     }
 
     // Called when another command which requires one or more of the same

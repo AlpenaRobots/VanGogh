@@ -72,7 +72,7 @@ public class ballrotate extends Subsystem {
     public void periodic() {
         // Put code here to be run every loop
 
-        SmartDashboard.putNumber("Ball Potentiometer", pot.get());
+  //      SmartDashboard.putNumber("Ball Potentiometer", pot.get());
 
     }
 

@@ -100,11 +100,13 @@ public class Robot extends TimedRobot {
         SmartDashboard.putData("Auto mode", chooser);
 
         UsbCamera CodeCam = (CameraServer.getInstance().startAutomaticCapture("Vision Camera", 0));
-        CodeCam.setResolution(858, 480);
-        CodeCam.setFPS(30);
+ //       CodeCam.setResolution(360, 240);
+        CodeCam.setResolution(160, 120);
+        CodeCam.setFPS(15);
         UsbCamera DriveCam = (CameraServer.getInstance().startAutomaticCapture("Drive Camera", 1));
-        DriveCam.setResolution(858, 480);
-        DriveCam.setFPS(30); 
+ //       DriveCam.setResolution(360, 240);
+        DriveCam.setResolution(160, 120);
+        DriveCam.setFPS(15); 
     }
 
     /**
@@ -123,8 +125,8 @@ public class Robot extends TimedRobot {
         double x = tx.getDouble(0.0);
         double y = ty.getDouble(0.0);
         double area = ta.getDouble(0.0);
-        SmartDashboard.putNumber("LimelightX", x);
-        SmartDashboard.putNumber("LimelightY", y);
+ /*       SmartDashboard.putNumber("LimelightX", x);
+        SmartDashboard.putNumber("LimelightY", y); */
         SmartDashboard.putNumber("LimelightArea", area);
 
         Robot.drive.updateLimelightTracking();
@@ -136,12 +138,12 @@ public class Robot extends TimedRobot {
         double angle = angleNet.getDouble(0.0);
         double length = lengthNet.getDouble(0.0);
 
-        SmartDashboard.putNumber("x1", x1);
+/*        SmartDashboard.putNumber("x1", x1);
         SmartDashboard.putNumber("x2", x2);
         SmartDashboard.putNumber("y1", y1);
         SmartDashboard.putNumber("y2", y2);
         SmartDashboard.putNumber("angle", angle);
-        SmartDashboard.putNumber("length", length);
+        SmartDashboard.putNumber("length", length); */
 
         Robot.drive.updateGaffersTape();
 
@@ -165,9 +167,9 @@ public class Robot extends TimedRobot {
         double x = tx.getDouble(0.0);
         double y = ty.getDouble(0.0);
         double area = ta.getDouble(0.0);
-        SmartDashboard.putNumber("LimelightX", x);
-        SmartDashboard.putNumber("LimelightY", y);
-        SmartDashboard.putNumber("LimelightArea", area);
+  /*      SmartDashboard.putNumber("LimelightX", x);
+        SmartDashboard.putNumber("LimelightY", y); */
+        SmartDashboard.putNumber("LimelightArea", area); 
 
         Robot.drive.updateLimelightTracking();
 
@@ -178,12 +180,12 @@ public class Robot extends TimedRobot {
         double angle = angleNet.getDouble(0.0);
         double length = lengthNet.getDouble(0.0);
 
-        SmartDashboard.putNumber("x1", x1);
+ /*       SmartDashboard.putNumber("x1", x1);
         SmartDashboard.putNumber("x2", x2);
         SmartDashboard.putNumber("y1", y1);
         SmartDashboard.putNumber("y2", y2);
         SmartDashboard.putNumber("angle", angle);
-        SmartDashboard.putNumber("length", length);
+        SmartDashboard.putNumber("length", length); */
 
         Robot.drive.updateGaffersTape();
 
@@ -235,8 +237,8 @@ public class Robot extends TimedRobot {
         double x = tx.getDouble(0.0);
         double y = ty.getDouble(0.0);
         double area = ta.getDouble(0.0);
-        SmartDashboard.putNumber("LimelightX", x);
-        SmartDashboard.putNumber("LimelightY", y);
+/*        SmartDashboard.putNumber("LimelightX", x);
+        SmartDashboard.putNumber("LimelightY", y); */
         SmartDashboard.putNumber("LimelightArea", area);
 
         Robot.drive.updateLimelightTracking();

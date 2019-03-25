@@ -78,14 +78,14 @@ public class ballintake extends Subsystem {
     // here. Call these from Commands.
 
     public void intakeJoystick(Joystick stick) {
-        double localSpeedVar = .2;
+        double localSpeedVar = .35;
      //   System.out.println("Started intake");
         if(stick.getRawAxis(3) > .05 && stick.getRawAxis(2) <= .05) {
-            setIntake(-stick.getRawAxis(3)*localSpeedVar);
+            setIntake(stick.getRawAxis(3)*localSpeedVar);
             Robot.ballplacer.setPlacer(-.2);
      //       System.out.println("intake in");
         } else if(stick.getRawAxis(2) > .05 && stick.getRawAxis(3) <= .05) {
-            setIntake(stick.getRawAxis(2)*localSpeedVar);
+            setIntake(-stick.getRawAxis(2)*localSpeedVar);
      //       System.out.println("intake out");
         } else {
             setIntake(0);
